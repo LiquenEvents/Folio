@@ -222,33 +222,25 @@ section{padding:clamp(80px,12vh,150px) 0}
 .service p{color:var(--faint);font-size:15px;margin:0;max-width:34ch}
 .service .tag{margin-top:auto;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta)}
 
-/* Trabalho / gallery — reuses identity cards */
+/* Trabalho — galeria de peças reais, minimalista */
 .work{border-top:1px solid var(--rule);background:var(--paper)}
-.cards{
-  display:grid;gap:26px;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+.gallery{
+  display:grid;gap:clamp(22px,4vw,54px);
+  grid-template-columns:repeat(2,1fr);
 }
-.card{
-  aspect-ratio:5/7;
-  padding:32px 26px;
-  display:flex;flex-direction:column;text-align:center;
-  border:1px solid var(--rule);
+.shot{margin:0}
+.shot img{
+  width:100%;height:auto;display:block;
+  box-shadow:0 26px 60px -34px rgba(34,48,60,.5);
 }
-.card.light{background:var(--paper-2)}
-.card.dark{background:var(--tinta);border-color:var(--tinta);color:var(--creme)}
-.card .top svg{width:64px;height:auto;margin:0 auto;color:var(--tinta)}
-.card.dark .top svg{color:var(--creme)}
-.card .cbody{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;font-family:'Playfair Display',serif}
-.card .course{font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
-.card.dark .course,.card.dark .cfoot{color:var(--mist)}
-.card .dish{font-size:16px;line-height:1.35}
-.card .cfoot{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-
-/* seating / plan card variant */
-.card.plan .cbody{justify-content:flex-start;gap:9px;padding-top:6px}
-.card.plan .plan-title{font-size:22px;margin-bottom:6px}
-.card.plan .seat{font-size:14px;line-height:1.5;color:var(--faint);font-family:'Inter',sans-serif}
-.card.dark.plan .seat{color:var(--mist)}
+.shot figcaption{
+  margin-top:16px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);
+}
+@media (max-width:680px){
+  .gallery{grid-template-columns:1fr;gap:40px}
+}
 
 /* Processo */
 .process{border-top:1px solid var(--rule)}
