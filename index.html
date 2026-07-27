@@ -47,6 +47,9 @@
   <!-- ============================ Hero ============================ -->
   <section class="hero" aria-label="Fólio">
     <div class="hero__media">
+      <!-- imagem estática de base: dá um leve movimento (zoom) mesmo
+           quando o iOS bloqueia o autoplay (Modo de Poupança de Energia) -->
+      <img class="hero__poster" src="assets/hero-poster.jpg" alt="" aria-hidden="true">
       <video id="heroVideo" autoplay muted loop playsinline preload="auto"
              poster="assets/hero-poster.jpg" aria-hidden="true" tabindex="-1"
              disablepictureinpicture disableremoteplayback>
