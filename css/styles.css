@@ -124,10 +124,19 @@ h1,h2,h3{
   overflow:hidden;
   background:var(--tinta);
 }
-.hero__media{position:absolute;inset:0;z-index:0}
+.hero__media{
+  position:absolute;inset:0;z-index:0;
+  /* still frame shown before/while the video plays, and whenever
+     the browser blocks autoplay (e.g. iOS Low Power Mode) so the
+     native play button never appears */
+  background:var(--tinta) url('../assets/hero-poster.jpg') center/cover no-repeat;
+}
 .hero__media video{
   width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .7s var(--ease);
 }
+/* revealed only once the video is actually playing */
+.hero__media video.is-playing{opacity:1}
 .hero__media::after{
   content:"";position:absolute;inset:0;
   background:

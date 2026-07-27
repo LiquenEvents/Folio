@@ -6,6 +6,21 @@
   var nav = document.getElementById('nav');
   var toggle = document.getElementById('navToggle');
 
+  /* --- Vídeo do hero: só visível quando toca mesmo --- */
+  /* Se o autoplay for bloqueado (ex.: Modo de Poupança de Energia no
+     iOS), o vídeo fica invisível e mostra-se o poster — nunca o botão
+     de play nativo. */
+  var hero = document.getElementById('heroVideo');
+  if (hero) {
+    hero.addEventListener('playing', function () { hero.classList.add('is-playing'); });
+    hero.addEventListener('pause', function () { hero.classList.remove('is-playing'); });
+    hero.addEventListener('ended', function () { hero.classList.remove('is-playing'); });
+    var attempt = hero.play();
+    if (attempt && typeof attempt.catch === 'function') {
+      attempt.catch(function () { /* autoplay bloqueado: fica o poster */ });
+    }
+  }
+
   /* --- Header: estado sólido depois do hero --- */
   function onScroll() {
     if (window.scrollY > window.innerHeight * 0.7) {
