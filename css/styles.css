@@ -285,13 +285,23 @@ section{padding:clamp(80px,12vh,150px) 0}
   line-height:1.35;color:var(--tinta);
   max-width:30ch;margin:0 0 30px;
 }
-.pair__grid{
-  display:grid;gap:clamp(20px,3vw,40px);
+/* dois conjuntos lado a lado; dentro de cada, o desenho e a peça */
+.pair__sets{
+  display:grid;gap:clamp(34px,5vw,72px);
   grid-template-columns:repeat(2,minmax(0,1fr));
-  max-width:720px;
 }
-@media (max-width:680px){
-  .pair__grid{grid-template-columns:1fr;gap:34px;max-width:340px}
+.pair__set{
+  display:grid;gap:clamp(10px,1.4vw,18px);
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+.pair__name{
+  grid-column:1 / -1;
+  margin-top:4px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);
+}
+@media (max-width:860px){
+  .pair__sets{grid-template-columns:1fr;gap:44px}
 }
 @media (max-width:680px){
   .gallery{grid-template-columns:1fr;gap:40px}
