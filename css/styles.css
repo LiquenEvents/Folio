@@ -183,18 +183,19 @@ section{padding:clamp(80px,12vh,150px) 0}
 .section-head h2{font-size:clamp(28px,4vw,44px);max-width:20ch}
 
 /* Intro / statement */
-.statement{border-top:1px solid var(--rule)}
-.statement p{
-  font-family:'Playfair Display',Georgia,serif;
-  font-weight:400;
-  font-size:clamp(22px,3.2vw,34px);
-  line-height:1.35;
-  max-width:24ch;
-  margin:0;
-  color:var(--tinta);
+/* nota de abertura — uma só voz, compacta, sem flutuar no vazio */
+.statement{
+  border-top:1px solid var(--rule);
+  padding-top:clamp(48px,6vh,72px);
+  padding-bottom:clamp(48px,6vh,72px);
 }
-.statement .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
-.statement .aside{color:var(--faint);font-size:15px;max-width:40ch;align-self:end}
+.statement p{
+  font-size:clamp(16px,1.9vw,18.5px);
+  line-height:1.7;
+  max-width:58ch;
+  margin:0;
+  color:var(--faint);
+}
 
 /* Serviços */
 .services{border-top:1px solid var(--rule)}
