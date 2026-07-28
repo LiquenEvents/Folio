@@ -78,7 +78,6 @@
   if (cfg) {
     var sws = Array.prototype.slice.call(cfg.querySelectorAll('.sw'));
     var cfgNome = document.getElementById('cfgNome');
-    var cfgHex = document.getElementById('cfgHex');
 
     var pick = function (btn, focus) {
       sws.forEach(function (b) {
@@ -88,7 +87,6 @@
       });
       cfg.style.setProperty('--tint', btn.dataset.hex);
       cfgNome.textContent = btn.dataset.nome;
-      cfgHex.textContent = btn.dataset.hex;
       if (focus) btn.focus();
     };
 
