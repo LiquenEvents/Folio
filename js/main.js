@@ -71,36 +71,6 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  /* --- Configurador de cor --- */
-  /* O menu é um vetor cujas 66 zonas herdam var(--tint); mudar a
-     propriedade na secção repinta a peça inteira de uma vez. */
-  var cfg = document.getElementById('cores');
-  if (cfg) {
-    var sws = Array.prototype.slice.call(cfg.querySelectorAll('.sw'));
-    var cfgNome = document.getElementById('cfgNome');
-
-    var pick = function (btn, focus) {
-      sws.forEach(function (b) {
-        var on = b === btn;
-        b.setAttribute('aria-checked', on ? 'true' : 'false');
-        b.tabIndex = on ? 0 : -1;
-      });
-      cfg.style.setProperty('--tint', btn.dataset.hex);
-      cfgNome.textContent = btn.dataset.nome;
-      if (focus) btn.focus();
-    };
-
-    sws.forEach(function (b) {
-      b.addEventListener('click', function () { pick(b, false); });
-      b.addEventListener('keydown', function (ev) {
-        var i = sws.indexOf(b), next = null;
-        if (ev.key === 'ArrowRight' || ev.key === 'ArrowDown') next = sws[(i + 1) % sws.length];
-        if (ev.key === 'ArrowLeft' || ev.key === 'ArrowUp') next = sws[(i - 1 + sws.length) % sws.length];
-        if (next) { ev.preventDefault(); pick(next, true); }
-      });
-    });
-  }
-
   /* --- Ano no rodapé --- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
