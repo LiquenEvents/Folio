@@ -275,14 +275,23 @@ section{padding:clamp(80px,12vh,150px) 0}
 /* modificadores — depois das regras base, para as poderem sobrepor */
 /* vista de contexto, a abrir a série */
 .shot--wide{grid-column:1 / -1}
-/* arte da peça (retrato), a fechar a série — centrada no papel */
-.shot--art{
-  grid-column:1 / -1;
-  display:flex;flex-direction:column;align-items:center;
-  padding:clamp(28px,4vw,52px) 0 0;
+
+/* do desenho à peça — o padrão ao lado do mesmo padrão aplicado */
+.pair{margin-top:clamp(56px,8vw,96px)}
+.pair__lead{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(19px,2.4vw,26px);
+  line-height:1.35;color:var(--tinta);
+  max-width:30ch;margin:0 0 30px;
 }
-.shot--art img{width:min(100%,340px)}
-.shot--art figcaption{align-self:flex-start}
+.pair__grid{
+  display:grid;gap:clamp(20px,3vw,40px);
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  max-width:720px;
+}
+@media (max-width:680px){
+  .pair__grid{grid-template-columns:1fr;gap:34px;max-width:340px}
+}
 @media (max-width:680px){
   .gallery{grid-template-columns:1fr;gap:40px}
 }
