@@ -153,7 +153,6 @@ h1,h2,h3{
   position:relative;z-index:1;width:100%;
   padding-bottom:9vh;padding-top:16vh;
 }
-.hero .eyebrow{color:rgba(239,232,218,.82);margin-bottom:22px}
 .hero h1{
   color:var(--creme);
   font-size:clamp(40px,7.2vw,86px);
@@ -173,11 +172,6 @@ h1,h2,h3{
   z-index:1;color:rgba(239,232,218,.7);
   font-size:10px;letter-spacing:.2em;text-transform:uppercase;
   display:flex;flex-direction:column;align-items:center;gap:10px;
-}
-.scroll-cue i{display:block;width:1px;height:44px;background:rgba(239,232,218,.5)}
-@media (prefers-reduced-motion:no-preference){
-  .scroll-cue i{animation:cue 2.4s var(--ease) infinite}
-  @keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:.9;transform-origin:top}}
 }
 
 /* ============================================================
