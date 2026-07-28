@@ -222,6 +222,45 @@ section{padding:clamp(80px,12vh,150px) 0}
 .service p{color:var(--faint);font-size:15px;margin:0;max-width:34ch}
 .service .tag{margin-top:auto;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--tinta)}
 
+/* Configurador de cor — o menu é vetor, uma só variável de tom */
+.config{border-top:1px solid var(--rule);--tint:var(--tinta)}
+.cfg{
+  display:grid;gap:clamp(36px,6vw,72px);
+  grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+  align-items:center;
+}
+.cfg__peca{display:flex;justify-content:center}
+.cfg__svg{width:min(100%,380px);filter:drop-shadow(0 24px 50px rgba(34,48,60,.18))}
+.cfg__svg svg{width:100%;height:auto;display:block}
+.cfg__svg svg *{transition:fill .45s var(--ease),stroke .45s var(--ease)}
+@media (prefers-reduced-motion:reduce){.cfg__svg svg *{transition:none}}
+
+.cfg__intro{margin:0 0 30px;max-width:40ch;color:var(--faint);font-size:15px}
+
+.swatches{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.sw{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  font:inherit;font-size:13px;padding:7px 14px 7px 8px;
+  background:transparent;border:1px solid var(--rule);color:var(--tinta);
+  border-radius:999px;
+  transition:border-color .25s var(--ease),background .25s var(--ease);
+}
+.sw i{width:15px;height:15px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.sw:hover{border-color:var(--mist)}
+.sw[aria-checked="true"]{border-color:var(--tinta);background:var(--paper-2)}
+
+.cfg__ficha{margin:0 0 32px;border-top:1px solid var(--rule)}
+.cfg__ficha div{
+  display:flex;justify-content:space-between;gap:18px;
+  padding:10px 0;border-bottom:1px solid var(--rule);
+}
+.cfg__ficha dt{margin:0;padding-top:3px}
+.cfg__ficha dd{margin:0;font-size:15px;text-align:right}
+
+@media (max-width:860px){
+  .cfg{grid-template-columns:1fr;gap:44px}
+}
+
 /* Trabalho — galeria de peças reais, minimalista */
 .work{border-top:1px solid var(--rule);background:var(--paper)}
 .gallery{
